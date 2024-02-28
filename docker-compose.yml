@@ -1,0 +1,26 @@
+version: '3'
+services:
+  documents-management-a:
+    container_name: documents-management-a
+    build: .
+    ports:
+      - "3000:3000"
+    networks:
+      - documents-management-network
+  postgres-a:
+    container_name: postgres-a
+    image: postgres:14-alpine
+    ports:
+      - 5432:5432
+    volumes:
+      - ~/apps/postgres:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=psw
+      - POSTGRES_USER=user
+      - POSTGRES_DB=db
+    networks:
+      - documents-management-network
+
+networks:
+  documents-management-network:
+    driver: bridge
