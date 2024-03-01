@@ -21,6 +21,10 @@ To run the project locally, you will need to follow these steps:
 
 The project will start on the default port 3000.
 
+## Postman Collection
+
+In the repository's root folder, you will find a "postman" directory that contains a Postman collection. This collection allows you to test the project locally.
+
 ## API Endpoints
 
 Below are the available endpoints and their descriptions:
